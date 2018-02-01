@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+	<!-- Scripts -->
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="js/menu_toggle.js"></script>
+	<title>Hotel Natassa</title>
+</head>
+<body>
+
+	<i class="fa fa-bars toggle_menu"></i>
+
+	<div class="sidebar_menu">
+		<i class="fa fa-times"></i>
+		<center>
+			<a href="home.php"><h1 class="boxed_item"><img src="logo3.png"></h1>
+			
+		</center>
+
+		<ul class="navigation_section nav_item_smaller" align="center">
+			<li class="navigation_item" >
+				<a href="home.php">ΑΡΧΙΚΗ</a>
+			</li>
+			<li class="navigation_item">
+				<a href="diamoni.html">ΔΙΑΜΟΝΗ
+			</li>
+			<li class="navigation_item" >
+				<a href="gallery.html">GALLERY
+			</li>
+			<li class="navigation_item">
+			<a href="reservation.html">
+				ΚΡΑΤΗΣΕΙΣ
+			</a>
+			</li>
+			<li class="navigation_item" >
+				<a href="location.html">ΤΟΠΟΘΕΣΙΑ</a>
+			</li>
+			<li class="navigation_item" >
+			<a href="contact.html">	ΕΠΙΚΟΙΝΩΝΙΑ</a>
+			</li>
+		</ul>
+
+		<center>
+			<a href="login.php"><h1 class="boxed_item boxed_item_smaller signup">
+			<i class="fa fa-user"></i>
+				Login
+			</h1></a>
+		</center>
+
+		<center>
+			<h1 class="boxed_item copyright">
+			
+				Copyright 2018@TEICM
+			</h1>
+		</center>
+	</div><!-- End of sidebar -->
+	<div class="main_location">
+
+    
+    <div id="map"></div>
+    <script>
+      function initMap() {
+      	var options={
+      		zoom: 16,
+          center: {lat: 40.000198,  lng: 23.576152}
+      	}
+        
+        var map = new google.maps.Map(document.getElementById('map'), options);
+        var marker = new google.maps.Marker({
+          position: {lat: 40.000198,  lng: 23.576152},
+          map: map
+        });
+var contentString='Natassa Hotel'+'<br>'+'Διεύθυνση: Χανιώτης 630 85'+'<br>'+'Τηλέφωνο: 23123123123';
+   var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+   marker.addListener('click',function(){
+   	infowindow.open(map, marker);
+   });
+
+infowindow.open(map, marker);
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI3BnSNyf0CBhlRg3u1YMtk_JOwlcpjP8&callback=initMap">
+    </script>
+
+</div>
+
+	<script src="js/close_menu.js"></script>
+
+</body>
+</html>
